@@ -4,6 +4,46 @@
     box-sizing: border-box;
     font-family: "Noto Sans JP", sans-serif;
 }
+/* Burger Menu Icon Hidden by Default */
+.burger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Show Burger Menu Icon on Smaller Screens */
+@media (max-width: 768px) {
+  .top-nav {
+    display: none; /* Hide Navbar Links */
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active + .top-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-row {
+    flex-direction: column-reverse !important;
+    align-items: center;
+  }
+  #home .col-6 {
+    margin-bottom: 20px;
+  }
+  .navcol-6{
+    width: 89% !important;
+    align-items: flex-start !important;
+  } 
+  .home-still{
+    margin-top: 20px;
+  }
+  .home-still p{
+    font-size: 20px !important;
+  }
+  .navcol-6 {
+    margin: 20px 0 !important; 
+  }
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 :root {
@@ -130,16 +170,13 @@ nav button {
     font-weight: bold;
 }
 
-.home-row {
-    height: 65vh;
-}
-
 .fcol {
     flex-direction: column;
     align-items: flex-start;
 }
 
 .navcol-6 {
+    width: 60%;
     justify-content: space-between;
 }
 
